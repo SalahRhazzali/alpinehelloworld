@@ -22,7 +22,7 @@ pipeline {
           steps {
             script {
               sh '''
-                docker run -d -p 80:5000 --name=$IMAGE_NAME -e PORT=5000 eazytraining/$IMAGE_NAME:$IMAGE_TAG
+                docker run -d -p 80:5000 --name $IMAGE_NAME -e PORT=5000 eazytraining/$IMAGE_NAME:$IMAGE_TAG
                 sleep 5
               '''
             }
@@ -33,7 +33,7 @@ pipeline {
           steps {
             script {
               sh '''
-                curl http://localhost | grep -q "Hello World"
+                curl http://localhost | grep -q "Hello world!"
               '''
             }
         }
